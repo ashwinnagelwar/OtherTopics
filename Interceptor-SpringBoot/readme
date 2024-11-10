@@ -1,0 +1,41 @@
+To test this setup from Postman, follow these steps:
+
+### Step 1: Set Up Postman for Testing
+
+1. **Open Postman** and create a new request.
+
+2. **Set the Request Method** to `GET`.
+
+3. **Enter the URL** for your endpoint:
+   - For secured data: `http://localhost:8080/api/secured/data`
+   - For public data: `http://localhost:8080/api/public/data`
+
+### Step 2: Test the Secured Endpoint (`/api/secured/data`)
+
+1. **Add the Authorization Header**:
+   - Go to the **Headers** tab.
+   - Add a header with the key `X-Auth-Token` and set the value to the expected token value (e.g., `"expected_token_value"`).
+
+2. **Send the Request**:
+   - Click **Send** to submit the request.
+   - If the token is correct, you should receive a response with the body: `"Here is some secured data!"`
+
+3. **Test Without the Authorization Header**:
+   - Remove the `X-Auth-Token` header or set it to an incorrect value.
+   - Send the request again.
+   - This time, you should receive a `401 Unauthorized` response, with `"Unauthorized"` in the response body.
+
+### Step 3: Test the Public Endpoint (`/api/public/data`)
+
+1. **Set the URL** to `http://localhost:8080/api/public/data`.
+
+2. **Send the Request** without adding any headers.
+
+3. You should receive the response: `"This is public data!"`
+
+### Additional Notes
+
+- **Console Logs**: Check your Spring Boot application’s console output after each request to see logs from the interceptor, including any timing or authorization details.
+- **Experiment with Different Values**: Try modifying the `X-Auth-Token` header value in Postman to see how the interceptor behaves with valid vs. invalid tokens. 
+
+This setup lets you verify the interceptor functionality and validate both secured and public endpoints.
