@@ -1,0 +1,18 @@
+The Executors framework simplifies thread management by abstracting thread creation, scheduling, and management.
+
+Key Classes:
+1. Executor: A simple interface for executing tasks.
+
+2. ExecutorService: A sub-interface of Executor that provides methods to manage and control thread lifecycle (e.g., shutdown).
+
+3. ScheduledExecutorService: Supports scheduling tasks to run after a delay or periodically.
+
+4. Executors: A utility class for creating preconfigured thread pools.
+
+	4.1. newFixedThreadPool(int nThreads): Creates a pool with a fixed number of threads.
+	
+	4.2.newCachedThreadPool(): Creates a pool with dynamically growing threads.
+	
+	4.3.newSingleThreadExecutor(): Creates a single-threaded executor.
+	
+	4.4.newScheduledThreadPool(int nThreads): Creates a pool that supports scheduled tasks.

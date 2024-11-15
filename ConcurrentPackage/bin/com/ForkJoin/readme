@@ -1,0 +1,35 @@
+The Fork/Join Framework in Java is a powerful tool for parallel computing. It is designed to take advantage of multiple processors by splitting tasks into smaller subtasks, executing them concurrently, and combining their results. This framework is ideal for divide-and-conquer algorithms where a problem is recursively divided into smaller subproblems.
+
+Key Components of Fork/Join Framework
+ForkJoinPool:
+
+A special thread pool optimized for task splitting and joining.
+Automatically manages worker threads and workload distribution.
+ForkJoinTask:
+
+A lightweight task that can be forked and joined.
+Subclasses include:
+RecursiveTask<V>: Returns a result.
+RecursiveAction: Does not return a result.
+How It Works
+Divide:
+
+A large task is split into smaller subtasks.
+This division continues recursively until the subtasks are simple enough to be solved directly (a threshold level).
+Conquer:
+
+Subtasks are executed concurrently in the ForkJoinPool.
+Combine:
+
+Results of the subtasks are combined to produce the final result.
+
+How It Works in the Example
+Forking:
+
+The SumTask splits the range (start, end) of the array into smaller ranges until the size is below the threshold (THRESHOLD).
+Computing:
+
+Each range below the threshold is processed directly by summing the numbers sequentially.
+Joining:
+
+Results from the subtasks are joined (combined) recursively to calculate the final sum.

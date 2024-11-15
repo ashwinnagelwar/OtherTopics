@@ -30,5 +30,6 @@ public class ComparatorMain {
 		for (Employee employee : list) {
             System.out.println(employee);
         }
+		
 	}
 }

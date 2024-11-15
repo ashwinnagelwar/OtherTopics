@@ -1,0 +1,8 @@
+Java provides advanced locking mechanisms in addition to synchronized blocks.
+
+Key Classes:
+ReentrantLock: A reentrant mutual exclusion lock with support for fairness.
+ReadWriteLock: Allows multiple readers or one writer thread.
+ReentrantReadWriteLock: Implementation of ReadWriteLock.
+StampedLock: An advanced lock with optimistic reads.
+Lock Interface: Defines locking and unlocking methods.
